@@ -1,5 +1,5 @@
 # License Agreement
-WireBootstrap for Angular 
+WireBootstrap for Angular  
 Last updated: November 2021
 
 Copyright (c) 2021-2022 Enterprise Blocks, Inc.
