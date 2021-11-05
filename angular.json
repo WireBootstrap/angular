@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "myComponent": {
+    "wire-sample": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,19 +17,25 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/myComponent",
+            "outputPath": "dist/wire-sample",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/app/sample/data/sample-data.json"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/@wirebootstrap/wire/wire.js",
+              "./node_modules/@wirebootstrap/wire-bootstrap/wire-bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -68,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "myComponent:build:production"
+              "browserTarget": "wire-sample:build:production"
             },
             "development": {
-              "browserTarget": "myComponent:build:development"
+              "browserTarget": "wire-sample:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "myComponent:build"
+            "browserTarget": "wire-sample:build"
           }
         },
         "test": {
@@ -100,7 +106,38 @@
           }
         }
       }
+    },
+    "wire-angular": {
+      "projectType": "library",
+      "root": "projects/wire-angular",
+      "sourceRoot": "projects/wire-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/wire-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wire-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/wire-angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wire-angular/src/test.ts",
+            "tsConfig": "projects/wire-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/wire-angular/karma.conf.js"
+          }
+        }
+      }
     }
   },
-  "defaultProject": "myComponent"
+  "defaultProject": "WireSample"
 }

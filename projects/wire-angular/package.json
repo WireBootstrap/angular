@@ -1,0 +1,13 @@
+{
+  "name": "@wirebootstrap/wire-angular",
+  "description": "WireBootstrap for Angular",
+  "version": "1.0.18",
+  "peerDependencies": {
+    "@angular/common": "^12.2.0",
+    "@angular/core": "^12.2.0"    
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@wirebootstrap/wire": "^2.1.8"
+  }
+}

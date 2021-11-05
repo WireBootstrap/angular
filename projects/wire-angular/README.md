@@ -1,4 +1,4 @@
-# WireBootstrap for Angular
+# WireBootstrap Angular Component
 
 Build applications with Bootstrap themes and components using **WireBootstrap** for free.
 
