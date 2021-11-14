@@ -9,4 +9,4 @@ The solution also contains a sample project that illustrates how to use WireBoot
 Visit https://docs.wirebootstrap.com/integrations/angular for getting started materials and detailed documentation.
 
 # Support
-Visit the Angular product page on the WireBootstrap web site at https://www.wireboostrap.com/products/angular.html for technical support options.
+Visit the Angular product page on the WireBootstrap web site at https://www.wirebootstrap.com/products/angular.html for technical support options.
